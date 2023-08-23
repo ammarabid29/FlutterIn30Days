@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_catalog/utils/routes.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -7,58 +8,62 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       color: Colors.white,
-      child: Column(
-        children: [
-          Image.asset(
-            "assets/images/login-image.png",
-            fit: BoxFit.cover,
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          const Text(
-            'Welcome',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 22,
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            Image.asset(
+              "assets/images/login-image.png",
+              fit: BoxFit.cover,
             ),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(
-              vertical: 16.0,
-              horizontal: 32.0,
+            const SizedBox(
+              height: 20,
             ),
-            child: Column(
-              children: [
-                TextFormField(
-                  decoration: const InputDecoration(
-                    labelText: "Username",
-                    hintText: "Enter Username",
-                  ),
-                ),
-                TextFormField(
-                  obscureText: true,
-                  decoration: const InputDecoration(
-                    labelText: "Password",
-                    hintText: "Enter Password",
-                  ),
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      foregroundColor: Colors.white,
+            const Text(
+              'Welcome',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 28,
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                vertical: 16.0,
+                horizontal: 32.0,
+              ),
+              child: Column(
+                children: [
+                  TextFormField(
+                    decoration: const InputDecoration(
+                      labelText: "Username",
+                      hintText: "Enter Username",
                     ),
-                    child: const Text("Login"))
-              ],
+                  ),
+                  TextFormField(
+                    obscureText: true,
+                    decoration: const InputDecoration(
+                      labelText: "Password",
+                      hintText: "Enter Password",
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 40,
+                  ),
+                  ElevatedButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, MyRoutes.homePage);
+                      },
+                      style: ElevatedButton.styleFrom(
+                          foregroundColor: Colors.white,
+                          minimumSize: const Size(150, 40)),
+                      child: const Text("Login"))
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
