@@ -15,11 +15,25 @@ class HomePage extends StatelessWidget {
           "Catalog App",
         ),
       ),
-      body: const Center(
-        child: Text(
-          'Welcome to $days days of flutter by $name',
+      body: Center(
+          child: Container(
+        constraints: const BoxConstraints(
+          minHeight: 70,
+          maxHeight: 200,
+          minWidth: 70,
+          maxWidth: 200,
         ),
-      ),
+        child: Container(
+          color: Colors.red,
+          height: 200,
+          width: 100,
+        ),
+      )
+          // Text(
+          //   'Welcome to $days days of flutter by $name',
+          // ),
+
+          ),
       drawer: const MyDrawer(),
     );
   }
