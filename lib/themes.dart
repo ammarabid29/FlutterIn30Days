@@ -22,6 +22,7 @@ class MyTheme {
         ),
       );
   static ThemeData get darkTheme => ThemeData(
+        brightness: Brightness.dark,
         fontFamily: GoogleFonts.poppins().fontFamily,
         cardColor: Colors.black,
         canvasColor: darkCreamColor,
@@ -30,14 +31,15 @@ class MyTheme {
         appBarTheme: const AppBarTheme(
           color: Colors.white,
           elevation: 0.0,
-          iconTheme: IconThemeData(color: Colors.white),
+          iconTheme: IconThemeData(
+            color: Colors.white,
+          ),
           titleTextStyle: TextStyle(
-            color: Colors.black,
+            color: Colors.white,
             fontWeight: FontWeight.bold,
             fontSize: 20,
           ),
         ),
-        brightness: Brightness.dark,
       );
 
   static Color creamColor = const Color(0xfff5f5f5);
