@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_catalog/models/catalog.dart';
-import 'package:flutter_catalog/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class HomeDetailPage extends StatelessWidget {
@@ -10,12 +9,12 @@ class HomeDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: MyTheme.creamColor,
+      backgroundColor: context.canvasColor,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
       ),
       bottomNavigationBar: Container(
-        color: Colors.white,
+        color: context.cardColor,
         child: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
           buttonPadding: EdgeInsets.zero,
@@ -25,7 +24,7 @@ class HomeDetailPage extends StatelessWidget {
               onPressed: () {},
               style: ButtonStyle(
                 backgroundColor:
-                    MaterialStateProperty.all(MyTheme.darkBluishColor),
+                    MaterialStateProperty.all(context.theme.focusColor),
                 shape: MaterialStateProperty.all(
                   const StadiumBorder(),
                 ),
@@ -51,12 +50,12 @@ class HomeDetailPage extends StatelessWidget {
                 edge: VxEdge.top,
                 height: 30,
                 child: Container(
-                  color: Colors.white,
+                  color: context.cardColor,
                   width: context.screenWidth,
                   child: Column(
                     children: [
                       catalog.name.text.xl4.bold
-                          .color(MyTheme.darkBluishColor)
+                          .color(context.primaryColor)
                           .make(),
                       catalog.desc.text.xl
                           .textStyle(context.captionStyle)
