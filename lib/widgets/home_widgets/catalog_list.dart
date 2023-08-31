@@ -12,13 +12,13 @@ class CatalogList extends StatelessWidget {
     return ListView.builder(
       shrinkWrap: true,
       itemBuilder: (context, index) {
-        final catalog = CatalogModel.getItemByPosition(index);
+        final catalog = CatalogModel.items[index];
         return InkWell(
           onTap: () => Navigator.push(
             context,
             MaterialPageRoute(
               builder: (context) => HomeDetailPage(
-                catalog: CatalogModel.getItemByID(2),
+                catalog: catalog,
               ),
             ),
           ),
@@ -32,6 +32,7 @@ class CatalogList extends StatelessWidget {
 
 class CatalogItem extends StatelessWidget {
   final Item catalog;
+
   const CatalogItem({super.key, required this.catalog});
 
   @override

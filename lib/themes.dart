@@ -21,6 +21,7 @@ class MyTheme {
           ),
         ),
       );
+
   static ThemeData get darkTheme => ThemeData(
         brightness: Brightness.dark,
         fontFamily: GoogleFonts.poppins().fontFamily,
