@@ -12,7 +12,7 @@ class AddToCart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    VxState.watch(context, on: [AddMutataion]);
+    VxState.watch(context, on: [AddMutataion, RemoveMutataion]);
 
     final CartModel cart = (VxState.store as MyStore).cart;
 
